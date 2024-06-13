@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mctri\\Workspaces\\visual-studio-workspace\\OpenGL\\demo_projects\\model_loading_demos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{706752E2-FF5D-4BE7-AF39-297797C1255E}|model_loading_demos.vcxproj|C:\\Users\\Mctri\\Workspaces\\visual-studio-workspace\\OpenGL\\demo_projects\\model_loading_demos\\daisy2500.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{706752E2-FF5D-4BE7-AF39-297797C1255E}|model_loading_demos.vcxproj|solutionrelative:daisy2500.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 188,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "daisy2500.cpp",
+              "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\visual-studio-workspace\\OpenGL\\demo_projects\\model_loading_demos\\daisy2500.cpp",
+              "RelativeDocumentMoniker": "daisy2500.cpp",
+              "ToolTip": "C:\\Users\\Mctri\\Workspaces\\visual-studio-workspace\\OpenGL\\demo_projects\\model_loading_demos\\daisy2500.cpp",
+              "RelativeToolTip": "daisy2500.cpp",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-12T11:37:22.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
