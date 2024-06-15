@@ -18,11 +18,9 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
 
-// Model Loading 1
-// 
-// Uses assimp to import a guitar backpack .obj file
+// 3d Chess Opengl
 //
-// 6-6-2024
+// 6-14-2024
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -37,6 +35,9 @@ bool firstMouse = true;
 // timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
+
+// lighting
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main()
 {
@@ -85,12 +86,12 @@ int main()
 
     // build and compile shaders
     // -------------------------
-    Shader ourShader("obj.vert", "obj.frag");
+    Shader objShader("obj.vert", "obj.frag");
+    Shader lightSrcShader("light_source.vert", "light_source.frag");
 
     // load models
     // -----------
-    Model ourModel("resources/objects/backpack/backpack.obj");
-
+    Model ourModel("resources/objects/chess_pieces/bishop.obj");
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -115,21 +116,36 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // don't forget to enable shader before setting uniforms
-        ourShader.use();
+        objShader.use();
+        objShader.setVec3("light.position", lightPos);
+        objShader.setVec3("viewPos", camera.Position);
+
+        // material properties
+        objShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+        objShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+        objShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
+        objShader.setFloat("material.shininess", 32.0f);
+
+        // light properties
+        objShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+        objShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+        objShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+        objShader.setFloat("light.constant", 1.0f);
+        objShader.setFloat("light.linear", 0.09f);
+        objShader.setFloat("light.quadratic", 0.032f);
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
+        objShader.setMat4("projection", projection);
+        objShader.setMat4("view", view);
 
         // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        ourShader.setMat4("model", model);
-        ourModel.Draw(ourShader);
-
+        objShader.setMat4("model", model);
+        ourModel.Draw(objShader);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

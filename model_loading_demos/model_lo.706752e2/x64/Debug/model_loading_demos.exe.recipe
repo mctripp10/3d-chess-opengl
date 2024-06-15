@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Mctri\Workspaces\visual-studio-workspace\OpenGL\demo_projects\model_loading_demos\x64\Debug\model_loading_demos.exe</FullPath>
+      <FullPath>C:\Users\Mctri\Workspaces\visual-studio-workspace\OpenGL\opengl_demos\model_loading_demos\x64\Debug\model_loading_demos.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
