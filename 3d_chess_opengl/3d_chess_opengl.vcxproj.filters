@@ -18,7 +18,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3d_chess_opengl.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\OpenGL\glad\src\glad.c">
@@ -40,11 +40,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="chess_piece.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="chess_board.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chess_piece.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
