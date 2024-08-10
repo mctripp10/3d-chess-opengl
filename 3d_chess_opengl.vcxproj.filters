@@ -40,11 +40,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="chess_board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="chess_piece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="chess_piece.h" />
+    <ClInclude Include="chess_board.h" />
   </ItemGroup>
 </Project>
