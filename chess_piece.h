@@ -10,6 +10,10 @@ public:
 	// chess piece attributes
 	std::string position;
 	glm::vec3 color;
+	std::string team;
+	std::string name;
+	bool selected;
+	bool captured;
 	Model model;
 
 	// constructor

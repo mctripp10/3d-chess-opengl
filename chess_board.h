@@ -21,7 +21,7 @@ public:
 	Model tileModel;
 
 	// constructor
-	ChessBoard(vector<ChessPiece> positions, Model tile) : board(positions), tileModel(tile), width(WIDTH), height(HEIGHT),  { };
+	ChessBoard(vector<ChessPiece> positions, Model tile) : board(positions), tileModel(tile), width(WIDTH), height(HEIGHT) { };
 
 	// methods
 	bool check();
