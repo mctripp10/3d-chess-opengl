@@ -143,6 +143,7 @@
     <None Include="obj.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bishop.h" />
     <ClInclude Include="chess_board.h" />
     <ClInclude Include="chess_piece.h" />
   </ItemGroup>

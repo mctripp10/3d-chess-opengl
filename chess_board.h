@@ -17,16 +17,42 @@ public:
 	unsigned int width;
 	unsigned int height;
 	unsigned int activePlayer;
-	vector<ChessPiece> board;
+	vector<vector<ChessPiece>> board;
 	Model tileModel;
 
 	// constructor
-	ChessBoard(vector<ChessPiece> positions, Model tile) : board(positions), tileModel(tile), width(WIDTH), height(HEIGHT) { };
+	ChessBoard(Model tile) : tileModel(tile), width(WIDTH), height(HEIGHT) {
+
+		// Assign white pieces to board
+		board[0][0] = Rook("white");
+		board[0][1] = Knight("white");
+		board[0][2] = Bishop("white");
+		board[0][3] = Queen("white");
+		board[0][4] = King("white");
+		board[0][5] = Bishop("white");
+		board[0][6] = Knight("white");
+		board[0][7] = Rook("white");
+
+		// Assign black pieces to board
+		board[7][0] = Rook("black");
+		board[7][1] = Knight("black");
+		board[7][2] = Bishop("black");
+		board[7][3] = Queen("black");
+		board[7][4] = King("black");
+		board[7][5] = Bishop("black");
+		board[7][6] = Knight("black");
+		board[7][7] = Rook("black");
+
+		for (int i = 0; i < width; i++) {
+			board[1][i] = Pawn("black");
+			board[6][i] = Pawn("white");
+		}
+
+	};
 
 	// methods
 	bool check();
 	bool checkmate();
-
 
 private:
 

@@ -11,6 +11,8 @@
 #include <learnopengl/camera.h>
 #include <learnopengl/model.h>
 
+#include <chess_board.h>
+
 #include <iostream>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -88,6 +90,9 @@ int main()
     // -------------------------
     Shader objShader("obj.vert", "obj.frag");
     Shader lightSrcShader("light_source.vert", "light_source.frag");
+
+    // chess game logic
+    // ----------------
 
     // load models
     // -----------
