@@ -1,3 +1,3 @@
-# OpenGL 3d Chess
+# 3D Chess OpenGL
 
 ---------- WIP ----------
