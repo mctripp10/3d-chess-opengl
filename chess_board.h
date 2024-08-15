@@ -18,7 +18,7 @@ public:
 	unsigned int height;
 	unsigned int activePlayer;
 	vector<vector<ChessPiece>> board;
-	Model tileModel;
+	Model tileModel = Model("resources/objects/chess_tile.obj");
 
 	// constructor
 	ChessBoard(Model tile) : tileModel(tile), width(WIDTH), height(HEIGHT) {
