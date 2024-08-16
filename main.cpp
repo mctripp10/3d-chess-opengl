@@ -96,7 +96,16 @@ int main()
 
     // load models
     // -----------
-    Model ourModel("resources/objects/chess_pieces/bishop.obj");
+    Model chessTile("resources/objects/chess_tile.obj");
+    glm::vec3 tile1Ambient(0.2f, 0.5f, 0.31f);
+    glm::vec3 tile1Diffuse(0.5f, 0.6f, 0.9f);
+    glm::vec3 tile1Specular(0.5f, 0.5f, 0.5f);
+    float tile1Shininess = 32.0f;
+
+    glm::vec3 tile2Ambient(0.7f, 0.2f, 0.31f);
+    glm::vec3 tile2Diffuse(0.2f, 0.9f, 0.4f);
+    glm::vec3 tile2Specular(0.5f, 0.5f, 0.5f);
+    float tile1Shininess = 32.0f;
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -126,10 +135,10 @@ int main()
         objShader.setVec3("viewPos", camera.Position);
 
         // material properties
-        objShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-        objShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-        objShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
-        objShader.setFloat("material.shininess", 32.0f);
+        objShader.setVec3("material.ambient", tile1Ambient);
+        objShader.setVec3("material.diffuse", tile1Diffuse);
+        objShader.setVec3("material.specular", tile1Specular); // specular lighting doesn't have full effect on this object's material
+        objShader.setFloat("material.shininess", tile1Shininess);
 
         // light properties
         objShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
@@ -150,7 +159,10 @@ int main()
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
         objShader.setMat4("model", model);
-        ourModel.Draw(objShader);
+        for (int i = 0; i < 5; i++) {
+            model = glm::translate(model, glm::vec3(i * 2.0f, i * 2.0f, 0.0f));
+            chessTile.Draw(objShader);
+        }
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

@@ -1,6 +1,8 @@
-﻿  glad.c
-  main.cpp
+﻿  main.cpp
 C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\chess_board.h(46,21): warning C4018: '<': signed/unsigned mismatch
   (compiling source file 'main.cpp')
   
-  3d_chess_opengl.vcxproj -> C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\x64\Debug\3d_chess_opengl.exe
+C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\main.cpp(108,11): error C2374: 'tile1Shininess': redefinition; multiple initialization
+  C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\main.cpp(103,11):
+  see declaration of 'tile1Shininess'
+  
