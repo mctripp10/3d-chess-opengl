@@ -105,7 +105,7 @@ int main()
     glm::vec3 tile2Ambient(0.7f, 0.2f, 0.31f);
     glm::vec3 tile2Diffuse(0.2f, 0.9f, 0.4f);
     glm::vec3 tile2Specular(0.5f, 0.5f, 0.5f);
-    float tile1Shininess = 32.0f;
+    tile1Shininess = 32.0f;
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -158,9 +158,9 @@ int main()
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        objShader.setMat4("model", model);
-        for (int i = 0; i < 5; i++) {
-            model = glm::translate(model, glm::vec3(i * 2.0f, i * 2.0f, 0.0f));
+        for (int i = 0; i < 8; i++) {
+            model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
+            objShader.setMat4("model", model);
             chessTile.Draw(objShader);
         }
 
