@@ -30,10 +30,6 @@ void processInput(GLFWwindow* window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-// materials
-Material BLACK = Material(0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f);
-Material WHITE = Material(0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f);
-
 // camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCR_WIDTH / 2.0f;
@@ -97,6 +93,9 @@ int main()
     Shader objShader("obj.vert", "obj.frag");
     Shader lightSrcShader("light_source.vert", "light_source.frag");
 
+    Model ourModel("resources/objects/chess_pieces/bishop.obj");
+    ChessBoard board = ChessBoard();
+
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -124,6 +123,12 @@ int main()
         objShader.setVec3("light.position", lightPos);
         objShader.setVec3("viewPos", camera.Position);
 
+        // material properties
+        objShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+        objShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+        objShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
+        objShader.setFloat("material.shininess", 32.0f);
+
         // light properties
         objShader.setVec3("light.ambient", 0.6f, 0.6f, 0.6f);
         objShader.setVec3("light.diffuse", 0.7f, 0.7f, 0.7f);
@@ -138,31 +143,13 @@ int main()
         objShader.setMat4("projection", projection);
         objShader.setMat4("view", view);
 
-        // Load board
-        ChessTile tile1 = ChessTile(BLACK);
-        ChessTile tile2 = ChessTile(WHITE);
-
+        // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        objShader.setMat4("model", model);
+        objShader.setMat4("model", model); 
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0)) {
-                    BLACK.setShader(objShader);
-                    tile1.model.Draw(objShader);
-                } 
-                else {
-                    WHITE.setShader(objShader);
-                    tile2.model.Draw(objShader);
-                }
-                model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));
-                objShader.setMat4("model", model);
-            }
-            model = glm::translate(model, glm::vec3(-4.0f, 0.0f, 0.5f));
-            objShader.setMat4("model", model);
-        }
+        board.loadBoard(objShader, model);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:chess_tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:chess_board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:chess_tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_piece.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,6 +34,19 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "chess_board.h",
+              "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h",
+              "RelativeDocumentMoniker": "chess_board.h",
+              "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h",
+              "RelativeToolTip": "chess_board.h",
+              "ViewState": "AQIAACkAAAAAAAAAAAAUwEsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-18T19:40:53.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "material.h",
               "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\material.h",
@@ -43,13 +60,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "chess_tile.h",
               "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_tile.h",
               "RelativeDocumentMoniker": "chess_tile.h",
               "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_tile.h",
               "RelativeToolTip": "chess_tile.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAB+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-18T18:05:21.836Z",
               "EditorCaption": ""
@@ -62,7 +79,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAIAAAAAAAAAAAAAAwKQAAAAJAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAUwJcAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-11T11:44:22.737Z",
               "EditorCaption": ""
@@ -77,11 +94,11 @@
       "FloatingWindowState": {
         "Id": "6bd10f48-0f4c-4f0c-830f-bdfe78a285ee",
         "Display": 0,
-        "X": 252,
-        "Y": 74,
+        "X": -119,
+        "Y": 0,
         "Width": 1662,
         "Height": 869,
-        "WindowState": 2
+        "WindowState": 0
       },
       "DocumentGroups": [
         {
@@ -90,13 +107,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "chess_piece.h",
               "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_piece.h",
               "RelativeDocumentMoniker": "chess_piece.h",
               "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_piece.h",
               "RelativeToolTip": "chess_piece.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-18T18:06:06.477Z",
               "EditorCaption": ""

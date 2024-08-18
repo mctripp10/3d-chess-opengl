@@ -10,9 +10,8 @@ class ChessTile {
 public:
 	Model model;
 	bool highlighted;
-	Material material;
 
-	ChessTile(Material mat, Model mod = Model("resources/objects/chess_tile.obj"), bool highltd = false) : model{ mod }, highlighted{ highltd }, material{ mat } { };
+	ChessTile(Model mod = Model("resources/objects/chess_tile.obj"), bool highltd = false) : model{ mod }, highlighted{ highltd } { };
 };
 
 #endif // !ChessTile_H
