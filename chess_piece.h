@@ -1,4 +1,4 @@
-#ifndef ChessPiece_H 
+#ifndef ChessPiece_H
 #define ChessPiece_H
 
 #include <string>

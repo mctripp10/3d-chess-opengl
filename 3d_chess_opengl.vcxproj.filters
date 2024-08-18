@@ -46,7 +46,10 @@
     <ClInclude Include="chess_piece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bishop.h">
+    <ClInclude Include="chess_tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

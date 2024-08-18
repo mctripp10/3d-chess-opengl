@@ -143,9 +143,10 @@
     <None Include="obj.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bishop.h" />
     <ClInclude Include="chess_board.h" />
     <ClInclude Include="chess_piece.h" />
+    <ClInclude Include="chess_tile.h" />
+    <ClInclude Include="material.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

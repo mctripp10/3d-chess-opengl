@@ -12,6 +12,8 @@
 #include <learnopengl/model.h>
 
 #include <chess_board.h>
+#include <chess_tile.h>
+#include <material.h>
 
 #include <iostream>
 
@@ -27,6 +29,10 @@ void processInput(GLFWwindow* window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+// materials
+Material BLACK = Material(0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f);
+Material WHITE = Material(0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f);
 
 // camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
@@ -91,22 +97,6 @@ int main()
     Shader objShader("obj.vert", "obj.frag");
     Shader lightSrcShader("light_source.vert", "light_source.frag");
 
-    // chess game logic
-    // ----------------
-
-    // load models
-    // -----------
-    Model chessTile("resources/objects/chess_tile.obj");
-    glm::vec3 tile1Ambient(0.2f, 0.5f, 0.31f);
-    glm::vec3 tile1Diffuse(0.5f, 0.6f, 0.9f);
-    glm::vec3 tile1Specular(0.5f, 0.5f, 0.5f);
-    float tile1Shininess = 32.0f;
-
-    glm::vec3 tile2Ambient(0.7f, 0.2f, 0.31f);
-    glm::vec3 tile2Diffuse(0.2f, 0.9f, 0.4f);
-    glm::vec3 tile2Specular(0.5f, 0.5f, 0.5f);
-    float tile2Shininess = 32.0f;
-
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -134,15 +124,9 @@ int main()
         objShader.setVec3("light.position", lightPos);
         objShader.setVec3("viewPos", camera.Position);
 
-        // material properties
-        objShader.setVec3("material.ambient", tile1Ambient);
-        objShader.setVec3("material.diffuse", tile1Diffuse);
-        objShader.setVec3("material.specular", tile1Specular); // specular lighting doesn't have full effect on this object's material
-        objShader.setFloat("material.shininess", tile1Shininess);
-
         // light properties
-        objShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-        objShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+        objShader.setVec3("light.ambient", 0.6f, 0.6f, 0.6f);
+        objShader.setVec3("light.diffuse", 0.7f, 0.7f, 0.7f);
         objShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
         objShader.setFloat("light.constant", 1.0f);
         objShader.setFloat("light.linear", 0.09f);
@@ -154,47 +138,30 @@ int main()
         objShader.setMat4("projection", projection);
         objShader.setMat4("view", view);
 
-        // render the loaded model
+        // Load board
+        ChessTile tile1 = ChessTile(BLACK);
+        ChessTile tile2 = ChessTile(WHITE);
+
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-
-        // fill in chess board tile 1
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 4; j++) {
-                model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
-                objShader.setMat4("model", model);
-                chessTile.Draw(objShader);
-            }
-            if (i % 2 == 0) {
-                model = glm::translate(model, glm::vec3(-3.5f, 0.0f, 0.5f));
-            }
-            else {
-                model = glm::translate(model, glm::vec3(-4.5f, 0.0f, 0.5f));
-            }
-        }
-
-        // load tile 2 material properties
-        objShader.setVec3("material.ambient", tile2Ambient);
-        objShader.setVec3("material.diffuse", tile2Diffuse);
-        objShader.setVec3("material.specular", tile2Specular); // specular lighting doesn't have full effect on this object's material
-        objShader.setFloat("material.shininess", tile2Shininess);
-
-        // fill in chess board tile 2
-        model = glm::translate(model, glm::vec3(4.0f, 0.0f, -4.5f));
         objShader.setMat4("model", model);
+
         for (int i = 0; i < 8; i++) {
-            if (i % 2 == 0) {
-                model = glm::translate(model, glm::vec3(-3.5f, 0.0f, 0.5f));
-            }
-            else {
-                model = glm::translate(model, glm::vec3(-4.5f, 0.0f, 0.5f));
-            }
-            for (int j = 0; j < 4; j++) {
-                model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
+            for (int j = 0; j < 8; j++) {
+                if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0)) {
+                    BLACK.setShader(objShader);
+                    tile1.model.Draw(objShader);
+                } 
+                else {
+                    WHITE.setShader(objShader);
+                    tile2.model.Draw(objShader);
+                }
+                model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));
                 objShader.setMat4("model", model);
-                chessTile.Draw(objShader);
             }
+            model = glm::translate(model, glm::vec3(-4.0f, 0.0f, 0.5f));
+            objShader.setMat4("model", model);
         }
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
