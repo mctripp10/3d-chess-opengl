@@ -15,8 +15,10 @@ const unsigned int HEIGHT = 8;
 const unsigned int ACTIVE_PLAYER = 1;		// 1 or 2 corresponding to if player 1 or 2 is the active player
 
 // materials
-Material BLACK = Material(0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f, 0.3f, 0.1f, 0.1f);
+Material BLACK = Material(0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f);
 Material WHITE = Material(0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f);
+Material BLUE = Material(0.2f, 0.5f, 0.8f, 0.2f, 0.5f, 0.8f, 0.2f, 0.5f, 0.8f);
+Material LIGHT_BLUE = Material(0.5f, 0.5f, 0.7f, 0.5f, 0.7f, 0.8f, 0.5f, 0.5f, 0.7f);
 
 class ChessBoard {
 public:
@@ -65,14 +67,20 @@ public:
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0)) {
-					BLACK.setShader(shader);
+					BLUE.setShader(shader);
 					tile.model.Draw(shader);
 				}
 				else {
-					WHITE.setShader(shader);
+					LIGHT_BLUE.setShader(shader);
 					tile.model.Draw(shader);
 				}
 				if (board[i][j] != NULL) {
+					if (i < 2) {
+						BLACK.setShader(shader);
+					}
+					else {
+						WHITE.setShader(shader);
+					}
 					board[i][j]->model.Draw(shader);
 				}
 				model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));
