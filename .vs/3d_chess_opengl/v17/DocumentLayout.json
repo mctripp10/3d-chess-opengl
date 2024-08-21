@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "chess_board.h",
               "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h",
               "RelativeToolTip": "chess_board.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAABHAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-18T19:40:53.18Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "material.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-18T18:11:46.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T18:11:46.747Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "chess_tile.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAB+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-18T18:05:21.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T18:05:21.836Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAJcAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-11T11:44:22.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T11:44:22.737Z"
             }
           ]
         }
