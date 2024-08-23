@@ -16,9 +16,11 @@ const unsigned int ACTIVE_PLAYER = 1;		// 1 or 2 corresponding to if player 1 or
 
 // materials
 Material BLACK = Material(0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f, 0.2f);
-Material WHITE = Material(0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f, 0.8f);
+Material WHITE = Material(0.9f, 0.9f, 0.9f, 0.9f, 0.9f, 0.9f, 0.9f, 0.9f, 0.9f);
 Material BLUE = Material(0.2f, 0.5f, 0.8f, 0.2f, 0.5f, 0.8f, 0.2f, 0.5f, 0.8f);
 Material LIGHT_BLUE = Material(0.5f, 0.5f, 0.7f, 0.5f, 0.7f, 0.8f, 0.5f, 0.5f, 0.7f);
+Material IVORY = Material(1.0f, 0.91f, 0.77f, 1.0f, 0.91f, 0.77f, 1.0f, 0.91f, 0.77f);
+Material RED = Material(0.35f, 0.1f, 0.1f, 0.35f, 0.1f, 0.1f, 0.35f, 0.1f, 0.1f);
 
 class ChessBoard {
 public:
@@ -67,11 +69,11 @@ public:
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0)) {
-					BLUE.setShader(shader);
+					RED.setShader(shader);
 					tile.model.Draw(shader);
 				}
 				else {
-					LIGHT_BLUE.setShader(shader);
+					IVORY.setShader(shader);
 					tile.model.Draw(shader);
 				}
 				if (board[i][j] != NULL) {
