@@ -178,6 +178,13 @@ void processInput(GLFWwindow* window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+
+    if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) {
+        std::string pos = "";
+        cout << "Enter a position: ";
+        cin >> pos;
+        cout << "Position chosen: " << pos;
+    }
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
