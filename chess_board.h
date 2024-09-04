@@ -93,6 +93,13 @@ public:
 		}
 	}
 
+	void movePiece(unsigned int i, unsigned int j) {
+		ChessPiece* pieceToMove = board[i][j];
+		// Call pieceToMove.move(position) function
+		// Create ChessPiece move function that moves it to a position relative to board
+		// Call move function in loadBoard when initialized where piece should be
+	}
+		 
 	bool check();
 	bool checkmate();
 

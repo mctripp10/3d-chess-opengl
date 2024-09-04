@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:chess_board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{746F360B-FD7B-4582-8718-5103BB3ABD0C}|3d_chess_opengl.vcxproj|C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 188,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -46,13 +46,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "chess_board.h",
               "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h",
               "RelativeDocumentMoniker": "chess_board.h",
               "ToolTip": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\chess_board.h",
               "RelativeToolTip": "chess_board.h",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAACMAAAAAAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAGMAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-18T19:40:53.18Z",
               "EditorCaption": ""
@@ -79,12 +79,11 @@
               "RelativeToolTip": "chess_tile.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-18T18:05:21.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-18T18:05:21.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Mctri\\Workspaces\\github-repos\\3d-chess-opengl\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
