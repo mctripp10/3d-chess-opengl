@@ -13,42 +13,42 @@ public:
 	std::string name;
 	bool selected;
 	bool captured;
-	Model model;
+	//Model model;
 
 	// constructor
-	ChessPiece(Model mod = Model("resources/objects/chess_pieces/bishop.obj"), glm::vec3 col = glm::vec3(0.0f, 0.0f, 0.0f))
-		: model{ mod }, color{ col }, selected{ false }, captured{ false } { };
+	ChessPiece(glm::vec3 col = glm::vec3(0.0f, 0.0f, 0.0f))
+		: color{ col }, selected{ false }, captured{ false } { };
 
 };
 
 class Pawn : public ChessPiece {
 public:
-	Pawn(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/pawn.obj")) { team = tm; }
+	Pawn(std::string tm) : ChessPiece() { team = tm, name = "Pawn"; }
 };
 
 class Rook : public ChessPiece {
 public:
-	Rook(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/rook.obj")) { team = tm; }
+	Rook(std::string tm) : ChessPiece() { team = tm, name = "Rook"; }
 };
 
 class Bishop : public ChessPiece {
 public:
-	Bishop(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/bishop.obj")) { team = tm; }
+	Bishop(std::string tm) : ChessPiece() { team = tm, name = "Bishop"; }
 };
 
 class Knight : public ChessPiece {
 public:
-	Knight(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/horse.obj")) { team = tm; }
+	Knight(std::string tm) : ChessPiece() { team = tm, name = "Knight"; }
 };
 
 class King : public ChessPiece {
 public:
-	King(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/king.obj")) { team = tm; }
+	King(std::string tm) : ChessPiece() { team = tm, name = "King"; }
 };
 
 class Queen : public ChessPiece {
 public:
-	Queen(std::string tm) : ChessPiece(Model("resources/objects/chess_pieces/queen.obj")) { team = tm; }
+	Queen(std::string tm) : ChessPiece() { team = tm, name = "Queen"; }
 };
 
 #endif // !ChessPiece_H 

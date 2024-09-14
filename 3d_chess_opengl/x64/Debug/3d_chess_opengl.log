@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\chess_board.h(57,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\chess_board.h(61,21): warning C4018: '<': signed/unsigned mismatch
   (compiling source file 'main.cpp')
   
   3d_chess_opengl.vcxproj -> C:\Users\Mctri\Workspaces\github-repos\3d-chess-opengl\x64\Debug\3d_chess_opengl.exe

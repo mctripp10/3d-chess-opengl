@@ -29,10 +29,12 @@ public:
 	unsigned int height;
 	unsigned int activePlayer;
 	ChessPiece* board[8][8];
-	Model tileModel;
+	//Model tileModel;
 
 	// constructor
-	ChessBoard(Model tile = Model("resources/objects/chess_tile.obj")) : tileModel{ tile }, width{ WIDTH }, height{ HEIGHT }, activePlayer{ 1 } {
+	ChessBoard() : width{ WIDTH }, height{ HEIGHT }, activePlayer{ 1 } {
+
+		cout << "test" << endl;
 
 		// Assign white pieces to board
 		board[0][0] = new Rook("white");
@@ -43,6 +45,8 @@ public:
 		board[0][5] = new Bishop("white");
 		board[0][6] = new Knight("white");
 		board[0][7] = new Rook("white");
+
+		cout << "test2" << endl;
 
 		// Assign black pieces to board
 		board[7][0] = new Rook("black");
@@ -76,7 +80,7 @@ public:
 					IVORY.setShader(shader);
 					tile.model.Draw(shader);
 				}
-				if (board[i][j] != NULL) {
+				/*if (board[i][j] != NULL) {
 					if (i < 2) {
 						BLACK.setShader(shader);
 					}
@@ -84,7 +88,7 @@ public:
 						WHITE.setShader(shader);
 					}
 					board[i][j]->model.Draw(shader);
-				}
+				}*/
 				model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));
 				shader.setMat4("model", model);
 			}
@@ -98,6 +102,31 @@ public:
 		// Call pieceToMove.move(position) function
 		// Create ChessPiece move function that moves it to a position relative to board
 		// Call move function in loadBoard when initialized where piece should be
+	}
+
+	bool isValidMove(std::string piecePosition, std::string pieceDestination) {
+		char posCol = piecePosition[0];
+		int posRow = (int)piecePosition[1] - 48;		// To convert char to int, subtract 48 since the numbers (digits) in ASCII code start from 48
+		char destCol = pieceDestination[0];
+		int destRow = (int)pieceDestination[1] - 48;
+
+		std::map<char, int> posMap { 
+			{ 'A', 1 },
+			{ 'B', 2 },
+			{ 'C', 3 },
+			{ 'D', 4 },
+			{ 'E', 5 },
+			{ 'F', 6 },
+			{ 'G', 7 },
+			{ 'H', 8 },
+		};
+
+		cout << posCol << " " << posRow << " " << destCol << " " << destRow << endl;
+
+		ChessPiece* pieceToMove = board[posRow-1][posMap[posCol]-1];
+		cout << "Selected piece: " << pieceToMove->name << endl;
+
+		return true;
 	}
 		 
 	bool check();

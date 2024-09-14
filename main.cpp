@@ -43,6 +43,9 @@ float lastFrame = 0.0f;
 // lighting
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
+// chess board
+ChessBoard board = ChessBoard();
+
 int main()
 {
     // glfw: initialize and configure
@@ -71,7 +74,7 @@ int main()
     glfwSetScrollCallback(window, scroll_callback);
 
     // tell GLFW to capture our mouse
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    // glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
@@ -92,9 +95,6 @@ int main()
     // -------------------------
     Shader objShader("obj.vert", "obj.frag");
     Shader lightSrcShader("light_source.vert", "light_source.frag");
-
-    Model ourModel("resources/objects/chess_pieces/bishop.obj");
-    ChessBoard board = ChessBoard();
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -149,7 +149,7 @@ int main()
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
         objShader.setMat4("model", model); 
 
-        board.loadBoard(objShader, model);
+        //board.loadBoard(objShader, model);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -180,10 +180,13 @@ void processInput(GLFWwindow* window)
         camera.ProcessKeyboard(RIGHT, deltaTime);
 
     if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) {
-        std::string pos = "";
-        cout << "Enter a position: ";
-        cin >> pos;
-        cout << "Position chosen: " << pos;
+        std::string piecePos = "";
+        std::string pieceDest = "";
+        cout << "Enter piece position: ";
+        cin >> piecePos;
+        cout << "Enter piece destination: ";
+        cin >> pieceDest;
+        board.isValidMove(piecePos, pieceDest);
     }
 }
 
